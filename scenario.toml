@@ -1,14 +1,27 @@
+# TimeSeries Green Agent Scenario
+# This scenario evaluates purple agents on time series forecasting tasks.
+# The green agent uses the A2A protocol to communicate with participants.
+
 [green_agent]
 image = "ghcr.io/sharma-yash01/melady-ts-green:latest"
-env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", USE_LOCAL_TS_DATA = "true", TS_DATA_DIR = "/app/TS-benchmark/dataset", AGENT_HOST = "0.0.0.0", AGENT_PORT = "8041", MODEL_TYPE = "openai", MODEL_NAME = "gpt-4o-mini", LOG_LEVEL = "INFO", DEV_MODE = "true" }
+env = { USE_LOCAL_TS_DATA = "true", TS_DATA_DIR = "/app/TS-benchmark/dataset" }
 
 [[participants]]
-agentbeats_id = "" # fill with platform-issued id
-name = "purple_agent"
-image = "ghcr.io/yourorg/your-purple-agent:latest"
+role = "purple_agent"
+# For platform runs, leave image empty and set agentbeats_id
+# For local runs, set image to the purple agent container
+agentbeats_id = ""
+image = ""
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
-dataset = "freshretailnet"  # optional: freshretailnet, causal_chambers, MIMIC, PSML
-task_type = "T2"            # optional: T1, T2, T3, T4
-max_tasks = 3               # optional: honored only in dev mode; full sweep in prod
+# Optional filters (omit to run all tasks)
+dataset = "freshretailnet"  # freshretailnet, causal_chambers, MIMIC, PSML
+task_type = "T2"            # T1, T2, T3, T4
+
+# Dev mode configuration:
+# - dev_mode = true:  Honor max_tasks limit (for testing/development)
+# - dev_mode = false: Run all matching tasks, ignore max_tasks (for production)
+# - If not set, defaults to false (production mode)
+dev_mode = true             # Set to false for production/full evaluation
+max_tasks = 5               # Only honored when dev_mode=true; ignored when dev_mode=false
