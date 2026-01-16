@@ -1,0 +1,113 @@
+{
+  "participants": {
+    "Melady-TS-Base-Purple-Agent": "019bc539-6e3b-7b33-a256-69385071a4dc"
+  },
+  "results": [
+    {
+      "participants": {
+        "agent": "http://melady-ts-base-purple-agent:9009/"
+      },
+      "config": {
+        "dataset": "freshretailnet",
+        "task_type": "T2",
+        "dev_mode": true,
+        "max_tasks": 10
+      },
+      "summary": {
+        "total_tasks": 10,
+        "wins": 4,
+        "avg_score": 0.3832775198059866,
+        "win_rate": 0.4,
+        "time_used": 149.7772901058197
+      },
+      "results": [
+        {
+          "task_id": "task2-18151",
+          "task_type": "T2",
+          "dataset": "freshretailnet",
+          "metrics": {
+            "mse": 0.012662278464877065
+          },
+          "details": {
+            "normalized_regression_score": 0.9873377215351229
+          },
+          "winner": "Melady-TS-Base-Purple-Agent",
+          "score": 0.9873377215351229,
+          "reasoning": "T2 score 0.987 (mse=0.013)"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-89334",
+          "task_type": "T2"
+        },
+        {
+          "task_id": "task2-113631",
+          "task_type": "T2",
+          "dataset": "freshretailnet",
+          "metrics": {
+            "mse": 0.0489906551016217
+          },
+          "details": {
+            "normalized_regression_score": 0.9510093448983783
+          },
+          "winner": "Melady-TS-Base-Purple-Agent",
+          "score": 0.9510093448983783,
+          "reasoning": "T2 score 0.951 (mse=0.049)"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-103183",
+          "task_type": "T2"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-6631",
+          "task_type": "T2"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-10944",
+          "task_type": "T2"
+        },
+        {
+          "task_id": "task2-56611",
+          "task_type": "T2",
+          "dataset": "freshretailnet",
+          "metrics": {
+            "mse": 0.02435927528205073
+          },
+          "details": {
+            "normalized_regression_score": 0.9756407247179493
+          },
+          "winner": "Melady-TS-Base-Purple-Agent",
+          "score": 0.9756407247179493,
+          "reasoning": "T2 score 0.976 (mse=0.024)"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-78538",
+          "task_type": "T2"
+        },
+        {
+          "error": "Forecast length mismatch: expected 112, got 116",
+          "task_id": "task2-122049",
+          "task_type": "T2"
+        },
+        {
+          "task_id": "task2-6858",
+          "task_type": "T2",
+          "dataset": "freshretailnet",
+          "metrics": {
+            "mse": 0.08121259309158448
+          },
+          "details": {
+            "normalized_regression_score": 0.9187874069084155
+          },
+          "winner": "Melady-TS-Base-Purple-Agent",
+          "score": 0.9187874069084155,
+          "reasoning": "T2 score 0.919 (mse=0.081)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# TimeSeries Green Agent Scenario
+# This scenario evaluates purple agents on time series forecasting tasks.
+# The green agent uses the A2A protocol to communicate with participants.
+
+[green_agent]
+agentbeats_id = "019b42e8-4e6c-7d01-85e7-31f09e079be1"
+# image = "ghcr.io/sharma-yash01/melady-ts-green:latest"
+env = { USE_LOCAL_TS_DATA = "true", TS_DATA_DIR = "/app/TS-benchmark/dataset", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[[participants]]
+# For platform runs, leave image empty and set agentbeats_id
+# For local runs, set image to the purple agent container
+name = "Melady-TS-Base-Purple-Agent"
+agentbeats_id = "019bc539-6e3b-7b33-a256-69385071a4dc"
+# image = ""
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[config]
+# Optional filters (omit to run all tasks)
+dataset = "freshretailnet"  # freshretailnet, causal_chambers, MIMIC, PSML
+task_type = "T2"            # T1, T2, T3, T4
+
+# Dev mode configuration:
+# - dev_mode = true:  Honor max_tasks limit (for testing/development)
+# - dev_mode = false: Run all matching tasks, ignore max_tasks (for production)
+# - If not set, defaults to false (production mode)
+dev_mode = true             # Set to false for production/full evaluation
+max_tasks = 10               # Only honored when dev_mode=true; ignored when dev_mode=false

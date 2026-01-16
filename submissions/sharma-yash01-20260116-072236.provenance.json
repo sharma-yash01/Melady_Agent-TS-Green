@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/sharma-yash01/melady-ts-green@sha256:beec98a564a5d8d0ae1d5e5e1f12cc5162e4bbb31dd04c457d38de948409f02b",
+    "Melady-TS-Base-Purple-Agent": "ghcr.io/sharma-yash01/melady-ts-base-purple@sha256:3f0b0cea2d2912d120f5d77a7396008fe25234f0dbabe327bf721f0f6685da16",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-16T07:22:36Z",
+  "github_actions": {
+    "run_url": "https://github.com/sharma-yash01/Melady_Agent-TS-Green/actions/runs/21058876807",
+    "run_logs_url": "https://api.github.com/repos/sharma-yash01/Melady_Agent-TS-Green/actions/runs/21058876807/logs",
+    "ref": "refs/heads/sharma-yash01-patch-1",
+    "sha": "a2b35f09abe393574534896cc4a379c839c84dba",
+    "repository_url": "https://github.com/sharma-yash01/Melady_Agent-TS-Green",
+    "workflow_ref": "sharma-yash01/Melady_Agent-TS-Green/.github/workflows/run-scenario.yml@refs/heads/sharma-yash01-patch-1",
+    "workflow_sha": "a2b35f09abe393574534896cc4a379c839c84dba"
+  }
+}
