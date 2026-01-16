@@ -3,11 +3,11 @@
 # The green agent uses the A2A protocol to communicate with participants.
 
 [green_agent]
+agentbeats_id = ""
 image = "ghcr.io/sharma-yash01/melady-ts-green:latest"
 env = { USE_LOCAL_TS_DATA = "true", TS_DATA_DIR = "/app/TS-benchmark/dataset" }
 
 [[participants]]
-role = ""
 # For platform runs, leave image empty and set agentbeats_id
 # For local runs, set image to the purple agent container
 name = ""
