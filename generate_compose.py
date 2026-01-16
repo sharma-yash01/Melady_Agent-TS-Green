@@ -87,7 +87,7 @@ endpoint = "http://green-agent:{green_port}"
 {config}"""
 
 
-def parse_scenario(scenario_path: Path) -> dict[str, Any]:
+def parse_scenario(scenario_path: Path):
     toml_data = scenario_path.read_text()
     data = tomli.loads(toml_data)
 
@@ -119,7 +119,7 @@ def format_depends_on(services: list) -> str:
     return "\n" + "\n".join(lines)
 
 
-def generate_docker_compose(scenario: dict[str, Any]) -> str:
+def generate_docker_compose(scenario: dict[str, Any]):
     green = scenario["green_agent"]
     participants = scenario.get("participants", [])
 
@@ -147,7 +147,7 @@ def generate_docker_compose(scenario: dict[str, Any]) -> str:
     )
 
 
-def generate_a2a_scenario(scenario: dict[str, Any]) -> str:
+def generate_a2a_scenario(scenario: dict[str, Any]):
     green = scenario["green_agent"]
     participants = scenario.get("participants", [])
 
@@ -155,7 +155,7 @@ def generate_a2a_scenario(scenario: dict[str, Any]) -> str:
     for p in participants:
         participant_lines.append(
             f"[[participants]]\n"
-            f"role = \"{p['name']}\"\n"
+            f"role = \"{p['role']}\"\n"
             f"endpoint = \"http://{p['name']}:{DEFAULT_PORT}\"\n"
             f"agentbeats_id = \"{p['agentbeats_id']}\"\n"
         )
@@ -170,7 +170,7 @@ def generate_a2a_scenario(scenario: dict[str, Any]) -> str:
     )
 
 
-def generate_env_file(scenario: dict[str, Any]) -> str:
+def generate_env_file(scenario: dict[str, Any]):
     green = scenario["green_agent"]
     participants = scenario.get("participants", [])
 

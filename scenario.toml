@@ -7,9 +7,10 @@ image = "ghcr.io/sharma-yash01/melady-ts-green:latest"
 env = { USE_LOCAL_TS_DATA = "true", TS_DATA_DIR = "/app/TS-benchmark/dataset" }
 
 [[participants]]
-role = "purple_agent"
+role = ""
 # For platform runs, leave image empty and set agentbeats_id
 # For local runs, set image to the purple agent container
+name = ""
 agentbeats_id = ""
 image = ""
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
